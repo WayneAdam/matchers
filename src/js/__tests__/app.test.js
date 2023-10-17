@@ -18,7 +18,6 @@ test.each([
 });
 
 /** ДЗ. Matches */
-
 const expected = [
   { name: 'маг', health: 100 },
   { name: 'лучник', health: 80 },
