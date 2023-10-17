@@ -1,5 +1,7 @@
 import getHealthStatus from '../app';
+import { sortedHeroes } from '../app';
 
+/** ДЗ. Чистые функции */
 test.each([
   ['healthy', 50, { name: 'Маг', health: 50 }],
   ['healthy', 90, { name: 'Маг', health: 90 }],
@@ -13,4 +15,16 @@ test.each([
 ])('app testing for %s status and %i health amount', (status, _, object) => {
   const result = getHealthStatus(object);
   expect(result).toBe(status);
+});
+
+/** ДЗ. Matches */
+
+const expected = [
+  { name: 'маг', health: 100 },
+  { name: 'лучник', health: 80 },
+  { name: 'мечник', health: 10 }
+]
+
+test('testing sorted objects for deep equality', () => {
+  expect(sortedHeroes).toEqual(expected);
 });

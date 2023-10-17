@@ -5,6 +5,7 @@ console.log('worked');
 
 console.log(sum([1, 2]));
 
+/** ДЗ. Чистые функции */
 export default function getHealthStatus(data) {
   if (data.health >= 50) {
     return 'healthy';
@@ -24,3 +25,14 @@ export default function getHealthStatus(data) {
 
   return 'dead';
 }
+
+/** ДЗ. Matches */
+const heroesInfo = [
+  {name: 'мечник', health: 10},
+  {name: 'маг', health: 100},
+  {name: 'лучник', health: 80},
+];
+
+export const sortedHeroes = heroesInfo.sort(function(x, y) {
+  return y.health - x.health;
+});
